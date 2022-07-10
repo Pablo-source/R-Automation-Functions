@@ -14,3 +14,8 @@ Set of  R functions and scripts to automate daily tasks such as creating project
   - The here package allows you to create paths relative to the top-level directory, defined by your project
   - It also allows you to build a path relative to the top-level project directory, to ease sharing read and write scripts among team members.
   -  https://here.r-lib.org/
+
+
+- **01. Add columns to dataframe specific order.R**
+
+- **02. Combine csv files into master .R**
