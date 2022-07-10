@@ -18,4 +18,10 @@ Set of  R functions and scripts to automate daily tasks such as creating project
 
 - **01. Add columns to dataframe specific order.R**
 
-- **02. Combine csv files into master .R**
+- **02. Combine csv files into master one.R**
+
+- **03. Install several packages at once.R**
+
+- **04. Working with files and folders.R**
+
+- **05. Relative pathas using HERE library.R**
