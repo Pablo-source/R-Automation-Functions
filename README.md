@@ -19,11 +19,11 @@ Set of  R functions and scripts to automate daily tasks such as creating project
 
   **04. Working with files and folders.R**
 
-  **05. Relative pathas using HERE library.R**
+  **05. Relative pathas using HERE package.R**
   - Focus on building project oriented scripts using here package
   - Here package allows relative paths creation referred to the top-level directory, defined by your project folder.
   - Allowing to build a path relative to the top-level project directory, to ease shairng input and ouptut functions among team members.
-  - References about the Here package
+  - Online references about Here package
   -   https://here.r-lib.org/
   -   https://www.tidyverse.org/blog/2017/12/workflow-vs-script/
 
