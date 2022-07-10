@@ -1,7 +1,7 @@
 # R-Automation-Functions
 Set of  R functions and scripts to automate daily tasks such as creating project directory folders structure or binding several csv files into one master file
 
-- 1. Setup project folder structure
+- **00.Setup project structure.R**
   - Build a function to be used across different projects
   - This function will create a standard set of folders and sub-folders (data,Output,Shapefiles,Checks,Maps,Archive)
   - We make use of  here() function from here package, to ensure we create relative paths to the Project tolder 
