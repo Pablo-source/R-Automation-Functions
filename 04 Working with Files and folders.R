@@ -1,10 +1,25 @@
+# 1. How to obtain a list of files on your project folder or sub-folders, based on their file extension
 
-#LEON RODENAS, Pablo (NHS ENGLAND & NHS IMPROVEMENT - X24)
-#Wed, Apr 13, 4:07 PM (16 hours ago)
-#to me
+# Using list.files() function with several arguments: 
+# 1.1 List all files on your project folder 
+list.files()
+# 1.2 List files based on their file extension
+list.files (pattern = "R$")
+list.files (pattern = "RData$")
+list.files (pattern = "txt$")
+list.files (pattern = "xlsx$")
+
+# 1.3 List files in a Sub-directory with specific file extension
+# List excel files on Data sub-directory
+list.files (path = "./Data" ,pattern = "xlsx$")
+
+list.files (path = "./Data" ,pattern = "R$")
+list.files (path = "./Data" ,pattern = "Rdata$")
+list.files (path = "./Data" ,pattern = "txt$")
+
+# Some other resources found online below
 
 #https://www.masterdataanalysis.com/r/working-with-files-and-folders-in-r/
-  
 #  Working with files and folders in R
 # FacebookTwitter
 # In this post I’ll cover how to work with files and folders in R.
@@ -73,8 +88,8 @@ ifelse(!dir.exists("Data"), dir.create("Data"), "Folder exists already")
 number_of_rows = sample(100:500, size = 25, replace = FALSE)
 
 save_file = function(n){
-
-df = data.frame(Var1 = rnorm(n, 100, 3),
+  
+  df = data.frame(Var1 = rnorm(n, 100, 3),
                   Var2 = rpois(n, 100),
                   Var3 = rcauchy(n, 100),
                   Var4 = rweibull(n, 3.5, 111.1))
@@ -87,5 +102,4 @@ invisible(lapply(number_of_rows, save_file))
 # Merge all the csv files into a single data frame
 #    Hint: Use do.call(rbind, ...) or rbind_all from the dplyr package
 #
-
 
