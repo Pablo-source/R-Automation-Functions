@@ -1,3 +1,7 @@
+![R](https://img.shields.io/badge/r-%23276DC3.svg?style=for-the-badge&logo=r&logoColor=white)
+![GitHub all releases](https://img.shields.io/github/downloads/Pablo-source/R-Automation-Functions/total?label=Downloads&style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/Pablo-source/R-Automation-Functions)
+
 # R-Automation-Functions
 Set of  R functions and scripts to automate daily tasks such as creating project directory folders structure or binding several csv files into one master file
 
