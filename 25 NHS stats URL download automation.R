@@ -1,8 +1,8 @@
 ## 25 NHS stats URL download automation.R 
 
 # AIM: 
-# Providing a set of URL for current or FUTURE statical releases, 
-# A function will check whether the file exists on the URL location. IF so, it will download it to your folder
+# Download NHS Excel or Zip files from public  URLs for current or FUTURE statical releases.
+# A function will check whether the file exists on the URL location. If so, it will download it to your folder
 
 # Function upgrade: Use this function alongside taskcheduler package to run it on a server 24/7, so you will 
 #  manage to dowload any public statistical release as soon as they become available
@@ -11,19 +11,19 @@
 # install.packages("taskscheduleR")
 # 2 Load library 
 # library("taskscheduleR")  
-
-# 3 OPEN THE ADD IN
+# 3 Open taskcheduler menu
 # taskscheduleR:::taskschedulerAddin()
 
-
-# 28 Download excel files programmatically from websites 
-# Aim: Build function to check whether file is available in websie to download it from its URL
+# Basic function: Check whether file is available in websie to download it from its URL
 library(here)
 
 Mydirectory <-here()
 
 # Check Project  directory file system
+
+
 # 01 01 Download Excel files 
+
 PHC_files <- function() {
   
   if(!dir.exists("08_Download_URL_files")){dir.create("08_Download_URL_files")}
