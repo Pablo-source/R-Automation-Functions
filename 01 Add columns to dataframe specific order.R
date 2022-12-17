@@ -26,7 +26,7 @@ Newcol <- Mydata %>%
           add_column(Empty = NA)
 Newcol
 
-# 2. Add an empty column after RAS
+# 2. Add an empty column after RAS, second column on the data frame
 Newcol_after <- Mydata %>%
                 add_column(Col_Name_new  = "column_content", .after ="RAS")
 Newcol_after
