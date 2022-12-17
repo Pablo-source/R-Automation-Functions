@@ -5,7 +5,11 @@
 #      Then the next action you take is to create a Folder structure within that Project folder to organise your workflow and R scripts
 
 
-# FUNCTION TO SETUP PROJECT STRUCTURE WITH FOLDERS AND SUB FOLDERS
+# FUNCTION: SETUP Folders and Sub Folders in a new brand PROJECT
+
+
+
+
 # Updated scripts to include here() function
 
 # I have created these two files using relative paths (if you execute this code in your machine,
