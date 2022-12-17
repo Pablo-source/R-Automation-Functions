@@ -78,7 +78,7 @@ combined_DATA <- list.files(path = "data/SINGLEF/",
                             full.names = T) %>%
                             map_df(~read_csv(.))
 
-# 4 Finally we write out combined file
+# 4 Finally we write out combined file as a new .csv file
 write_csv(combined_DATA,here("data/SINGLEF","combined_DATA.csv"))
 
 # JUST FOR TESTING PURPOSES. (REMOVE APPENDEN FILE)
