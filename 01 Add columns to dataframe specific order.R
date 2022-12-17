@@ -42,6 +42,6 @@ Newcol_before
 dataf <- read_excel('./SimData/add_column.xlsx')
 dataf2 <- read_excel('./SimData/add_column2.xlsx')
 
-# Add the columns from the second dataframe to the first
+# Add the columns from the second dataframe to the first data frame
 dataf3 <- cbind(dataf, dataf2[c("Anx1", "Anx2", "Anx3")])
 
