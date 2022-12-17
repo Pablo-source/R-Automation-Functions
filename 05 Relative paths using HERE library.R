@@ -10,7 +10,8 @@ library(here)
 
 here::i_am("RmdFolder/coding_best_practices.Rmd")
 
-# 01 Create folder structure making use of HERE package 
+# 01 Create folder structure making use of HERE package.
+# This ensures we define new folder using relative paths
 
 project_setup <-function(){
   
