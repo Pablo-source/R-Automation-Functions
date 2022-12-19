@@ -1,6 +1,6 @@
 # 1. How to obtain a list of files on your project folder or sub-folders, based on their file extension
 
-# Using list.files() function with several arguments: 
+# Using list.files() function, arguments: 
 # 1.1 List all files on your project folder 
 list.files()
 # 1.2 List files based on their file extension
