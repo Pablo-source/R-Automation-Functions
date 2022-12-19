@@ -1,6 +1,7 @@
 # 08 Find duplicates Read in and read out csv files
 # Using duplicated() function from base library 
 # Using filter() function from DPLYR package  
+# wrap function steps using dplyr verbs
 
 library(here)
 library(dplyr)
@@ -15,6 +16,7 @@ COVID_DATA_flag_dups <- MY_COVID_DATA %>%
                     group_by(region) %>% 
                     mutate(dup_value = duplicated(date)) %>% 
                     ungroup()
+
 COVID_DATA_flag_dups
 
 write.csv(COVID_DATA_flag_dups,here("data","COVID_DATA_flag_dups.csv"), row.names = TRUE)
