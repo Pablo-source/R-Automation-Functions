@@ -4,7 +4,9 @@
 Folder_contents  <- list.files()
 
 
-# 2. Then explore individual file types on each sub-folder
+# 2. Then explore individual file extension
+
+ #on each sub-folder
 
 # 2.1 Example on how to list all R files. 
 Imp_dash <- list.files (path = "./02 02 Improvement dash" ,pattern = "R$")
