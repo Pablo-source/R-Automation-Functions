@@ -1,4 +1,4 @@
-# 07 Read in and read out csv files
+# 07 Read in and read out csv files using relative paths
 # rad.table() function from utils library
 
 library(here)
