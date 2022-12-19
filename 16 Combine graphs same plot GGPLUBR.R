@@ -37,6 +37,7 @@ PLOT_mtype3 <-  Indic_type_FLAG %>%
 PLOT_mtype3
 
 # THEN we combine these three plots using  library(ggpubr)
+# ggarrange to combine three ggplots in one image
 # ARRANGE PLOT IN A 3 COLS BY 1 ROW MATRIX
 ggarrange(PLOT_mtype1, PLOT_mtype2, PLOT_mtype3 + rremove("x.text"), 
           labels = c("A", "B", "C"),
