@@ -1,4 +1,6 @@
 # month.name() function in R with Example
+# The month.name is the English name for the months of the year. Sometimes date vector for months is recorded in numeric form
+
 # 15 Month name function.R
 # 0. Setup Dummy data set
 library(dplyr)
