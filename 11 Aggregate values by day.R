@@ -10,7 +10,7 @@ MY_COVID_DATA  <-read.table(here("data", "MY_COVID_DATA.csv"),
 MY_COVID_DATA
 str(MY_COVID_DATA)
 
-# poblem. date is imported as FACTOR
+# poblem. date is imported as FACTOR 
 # This is how you turn a factor into a DATE variable 
 AUS_conf_data <- MY_COVID_DATA %>% 
                   select(region,date,Confirmed) %>% 
