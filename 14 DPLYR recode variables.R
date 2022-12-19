@@ -1,4 +1,4 @@
-## 14 DPLYR recode long winding variable names 
+## 14 DPLYR recode long winding variable names.simple DPLYR recode example 
 # R script: 14 DPLYR recode variable.R
 gimmeCaffeine <- gimmeCaffeine %>%
   mutate(origin = recode(origin, 
