@@ -1,4 +1,4 @@
-# Create variable values summary tables using DPLYR
+# Create variable values summary tables using DPLYR library
 # 12 Variable values freq table.R
 
 # 0. Setup Dummy data set
