@@ -1,5 +1,5 @@
 # 10 Subset data by DATE RANGE.R
-# We simple use filter function from DPLYR package to subset data for a specific day       
+# We simple use filter function from DPLYR package to subset data for a specific day        
 # filter(DATE >= "2021-04-21" & DATE <= "2021-04-23")
 
 library(here)
