@@ -2,7 +2,7 @@
 # 
 # The grepl() stands for “grep logical”. 
 # In R it is a built-in function that searches for matches 
-# of a string or string vector. The grepl() method takes a pattern 
+# of a string or string vector. The grepl() method takes a pattern (we define that string pattern in our search)
 # and data and returns TRUE if a string contains the pattern, otherwise FALSE.
 
 # We use ifelse() nested conditions to flag each sting match provided by grepl function
