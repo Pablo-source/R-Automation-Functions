@@ -33,4 +33,4 @@ Set of  R functions and scripts to automate daily tasks such as creating project
   -   https://here.r-lib.org/
   -   https://www.tidyverse.org/blog/2017/12/workflow-vs-script/
 
-There is a brief description of each script aim under the initial commit column
+There is a brief description of each script aim below the first initial comit label at the top
