@@ -1,4 +1,4 @@
-# 1.3 List files in a Sub-directory with specific file extension
+# List files in a Sub-directory with specific file extension
 
 # R Script: 21 List folder content by file type.R
 
