@@ -2,7 +2,6 @@
 
 # Using replicate(),rnorm() functions
 
-# Mydata2
 # Use replicate to create new set of data with duplicated character values 
 # Introduce National dummy data as reference
 
