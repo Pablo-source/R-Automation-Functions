@@ -1,4 +1,4 @@
-# 26 Formatting_YYYY_MMM dates as rdates.R  
+# 26 Format_YYYY_MMM to r dates.R  
 
 ## AIM
 # 1. Import data from Excel file
