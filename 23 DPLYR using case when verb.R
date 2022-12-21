@@ -1,6 +1,6 @@
-# 23 DPLYR using case_when() verb
+# 23 DPLYR using case_when() verb 
 
-# 1. Setup a dummy data set
+# 1.Setup a dummy data set
 Indic2_n <-c(replicate(2,"Knee Replacement"),
              replicate(2,"Hip Replacement"),
              replicate(2,"Falls and fractures"))
