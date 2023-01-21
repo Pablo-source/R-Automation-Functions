@@ -33,4 +33,20 @@ Set of  R functions and scripts to automate daily tasks such as creating project
   -   https://here.r-lib.org/
   -   https://www.tidyverse.org/blog/2017/12/workflow-vs-script/
 
+- The here package creates paths relative to the top-level directory. The package displays the top-level of the current project on load or any time you call here():
+
+here::i_am("README.Rmd")
+#> here() starts at /home/kirill/git/R/here
+here()
+#> [1] "/home/kirill/git/R/here"
+- You can build a path relative to the top-level directory in order to read or write a file:
+here("inst", "demo-project", "data", "penguins.csv")
+
+#> [1] "/home/kirill/git/R/here/inst/demo-project/data/penguins.csv"
+
+readr::write_csv(palmerpenguins::penguins, here("inst", "demo-project", "data", "penguins.csv"))
+
+- These relative paths work regardless of where the associated source file lives inside your project, like analysis projects with data and reports in different subdirectories. See the included demo project for an example.
+
+  **05. Read and write CSV files using relative paths**
 There is a brief description of each script aim below the first initial comit label at the top
