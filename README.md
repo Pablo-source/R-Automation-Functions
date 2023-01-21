@@ -48,5 +48,5 @@ readr::write_csv(palmerpenguins::penguins, here("inst", "demo-project", "data", 
 
 - These relative paths work regardless of where the associated source file lives inside your project, like analysis projects with data and reports in different subdirectories. See the included demo project for an example.
 
-  **05. Read and write CSV files using relative paths**
+**06. Read and write CSV files using relative paths**
 There is a brief description of each script aim below the first initial comit label at the top
