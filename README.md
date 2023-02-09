@@ -50,3 +50,7 @@ readr::write_csv(palmerpenguins::penguins, here("inst", "demo-project", "data", 
 
 **06. Read and write CSV files using relative paths**
 There is a brief description of each script aim below the first initial comit label at the top
+
+**DPLYR verbs folder**
+
+Set of tricks and advanced data wrangling manipulation verbs using DPLYR, some of these scrips refer to data preparation whilst others refer to how to perform variable calculations or softs searhcs when using where statements.
