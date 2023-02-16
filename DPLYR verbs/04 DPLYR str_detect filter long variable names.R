@@ -1,6 +1,6 @@
-# 13 DPLYR
-# filter() and str_detect() to subset rows using Regular Expressions and soft matching searches
+# 04 DPLYR str_detect filter long var names 
 
+# filter() and str_detect() to subset rows using Regular Expressions and soft matching searches
 # https://stackoverflow.com/questions/43227088/how-can-i-apply-dplyrs-select-starts-with-on-rows-not-columns
 
 Metric_Name  <-c("Cerebrovascular disease (10B) - Total spend per 1,000 age-sex weighted population",
