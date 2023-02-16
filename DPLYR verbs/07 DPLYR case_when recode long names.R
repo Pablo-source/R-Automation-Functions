@@ -1,4 +1,6 @@
-# 07 DPLYR using case_when() verb 
+# DPLYR using case_when() verb 
+
+# 07 DPLYR case_when recode long names.R
 
 # 1.Setup a dummy data set
 Indic2_n <-c(replicate(2,"Knee Replacement"),

@@ -1,4 +1,6 @@
-# 23 DPLYR using case_when() verb 
+# DPLYR using case_when() verb 
+
+# 05 DPLYR case_when simple recode.R
 
 # 1.Setup a dummy data set
 Indic2_n <-c(replicate(2,"Knee Replacement"),

@@ -1,5 +1,6 @@
-# 23 DPLYR using case_when() verb 
+# DPLYR case_when re code long names DPLYR using case_when() verb 
 
+# 04 DPLYR case_when recode long names.R
 # 1.Setup a dummy data set
 Indic2_n <-c(replicate(2,"Knee Replacement"),
              replicate(2,"Hip Replacement"),
@@ -12,13 +13,15 @@ value2 <-c(rnorm(3))
 # Create for each Indicators two rows one for Org value and another for national value
 Scope <- c(replicate(6,c("Org","national")))
 
-# 1. Bind vectors into a single data frame
+# Bind vectors into a single data frame
 str(Indic2_n)
 str(value2)
 
 MydataN <-cbind.data.frame(Indic2_n,Org2,value2,Scope)
 
 # WE can create a nee variable to recode vars
+
+# 2. Recode previous values into a new variable with shorter variable names
 table(Org2)
 
 Dataset <- MydataN

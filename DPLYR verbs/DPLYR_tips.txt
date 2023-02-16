@@ -1,1 +1,21 @@
 This folder includes R scripts using DPLYR to optimse daily data manipulations
+
+# 01 DPLYR recode variables.R
+- Using mutate() and recode() DPLYR verbs to recode original variable values. Useful when some vars have long and winded names.
+
+# 02 DPLYR subset rows percentage IN.R
+- Combination of filter() and %in% verbs to subset categories based on an adhoc vector
+
+# 03 DPLYR variable frequency summary table.R
+- Obtain count of variable values using group_by(Indic_ID) combined with
+  summarize( freq = n()), end this script by using arrange(desc(freq)) to display frequency values in descending order
+  
+# 04 DPLYR case_when recode long names.R
+- Recode previous values into a new variable with shorter variable names.
+- The case_when() function includes inside the parenthesis two components
+  separated by a tilde (~): 
+
+a) In the left side there is a condition that is evaluated as TRUE
+b) In the right side of the tilde there is the value of the output if the condition is evaluated as TRUE
+- We use case_when in this instance to create a new column in the data frame
+- We use case_when to implement a logic that test for a single condition, outputting a value if that condition is evaluated as TRUE.
