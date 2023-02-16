@@ -55,12 +55,12 @@ There is a brief description of each script aim below the first initial comit la
 
 Set of tricks and advanced data wrangling manipulation verbs using DPLYR, some of these scrips refer to data preparation whilst others refer to how to perform variable calculations or softs searhcs when using where statements.
 
-- Soft searches using str_detect with long variable names
+- Soft searches using str_detect with long variable names and FILTER verb
 
-- Recode variables using DPLYR
+- Recode variables using CASE WHEN in DPLYR
 
 - Subset rows based on variable values ising %IN verb
 
-- Match string patterns usnig CASE WHEN verb 
+- Subset rows using FILTER with string patterns usnig CASE WHEN verb 
 
 - How to use FILTER with IN and NOT IN verbs to subset rows
