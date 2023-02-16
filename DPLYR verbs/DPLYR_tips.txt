@@ -19,3 +19,19 @@ a) In the left side there is a condition that is evaluated as TRUE
 b) In the right side of the tilde there is the value of the output if the condition is evaluated as TRUE
 - We use case_when in this instance to create a new column in the data frame
 - We use case_when to implement a logic that test for a single condition, outputting a value if that condition is evaluated as TRUE.
+
+# 05 DPLYR case_when simple recode.R
+- case_when can be used to recode variables, left side of the tilde expression contains the old variable values and right side of the tilde includes new recoded values
+
+# 06 DPLYR filter IN and NOT IN.R
+There is the IN verb in DPLYR used mainly to filter data including certain categories. We can include certain values using a c() concatenate function to list values to keep from a bigger data set.
+
+# 07 DPLYR case_when recode long variable names
+Similar example as simple recode, we can use it to recode long winded variables values into simple and shorter ones
+
+# 08 DPLYR using filter() with str_detect() 
+This is a way of subsetting rows from a data set where we use 
+specific string searches to identify long and winded variable names
+
+# 09 DPLYR case_when recode long names
+This is another example on how to use case_when to recode variable names when subsetting rows using filter() function
