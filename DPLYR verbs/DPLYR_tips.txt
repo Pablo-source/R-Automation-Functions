@@ -1,4 +1,4 @@
-This folder includes R scripts using DPLYR to optimse daily data manipulations
+This folder includes R scripts using DPLYR to optimse daily data manipulations. Comprises several verbs used for data wrangling
 
 # 01 DPLYR recode variables.R
 - Using mutate() and recode() DPLYR verbs to recode original variable values. Useful when some vars have long and winded names.
@@ -23,11 +23,11 @@ b) In the right side of the tilde there is the value of the output if the condit
 # 05 DPLYR case_when simple recode.R
 - case_when can be used to recode variables, left side of the tilde expression contains the old variable values and right side of the tilde includes new recoded values
 
-# 06 DPLYR filter IN and NOT IN.R
+# 06 DPLYR filter IN and NOT IN.R 
 There is the IN verb in DPLYR used mainly to filter data including certain categories. We can include certain values using a c() concatenate function to list values to keep from a bigger data set.
 
 # 07 DPLYR case_when recode long variable names
-Similar example as simple recode, we can use it to recode long winded variables values into simple and shorter ones
+Similar example as simple recode, we can use it to recode long winded variables values into simple and shorter more convenient ones
 
 # 08 DPLYR using filter() with str_detect() 
 This is a way of subsetting rows from a data set where we use 
