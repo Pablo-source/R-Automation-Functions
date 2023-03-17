@@ -9,6 +9,14 @@
 # Use pacman package to load several libraries at once
 
 # install.packages("pacman")
+# Load packages when required
+if(!require("readr")) install.packages("readr")
+if(!require("here")) install.packages("here")
+if(!require("dplyr")) install.packages("dplyr")
+if(!require("ggplot2")) install.packages("ggplot2")
+if(!require("purrr")) install.packages("purrr")
+
+
 pacman::p_load(readr,here,dplyr,ggplot2,purrr)
 
 #library(readr)
