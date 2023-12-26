@@ -9,6 +9,8 @@
 ## Custom function to replace missing values by same value previous week
 
 # Create dummy data set
+library(tidyverse)
+
 Date <-as.Date(c("2023-12-06","2023-12-07","2023-12-08","2023-12-09","2023-12-10",
                  "2023-12-11","2023-12-12","2023-12-13","2023-12-14","2023-12-15"),
                format = "%Y-%m-%d")
@@ -36,7 +38,9 @@ Test_data
 # previous week value.
 Test_data_input <- Test_data %>%  
   # Display weekday (assuming week starts on Monday )
-  mutate(weekday = wday(Date, week_start=1)) %>% 
+  mutate(
+    weekday = wday(Date, week_start=1),
+    weekday_label = wday(Date, week_start=1,label = TRUE)) %>% 
   # Input missing values by same day previos week
   # Day of the week assumes week starts on Monday (Monday=1)
   mutate(Values_fill = ifelse(is.na(Values),
@@ -61,14 +65,14 @@ Input_prev_week <- function(){
 Input_prev_week()
 
 # > Input_prev_week()
-# Date  Values weekday Values_fill
-# 1  2023-12-06 1138652       3     1138652
-# 2  2023-12-07 1150728       4     1150728
-# 3  2023-12-08 1163143       5     1163143
-# 4  2023-12-09 1111295       6     1111295
-# 5  2023-12-10 1159204       7     1159204
-# 6  2023-12-11 1133881       1     1133881
-# 7  2023-12-12 1053707       2     1053707
-# 8  2023-12-13      NA       3     1138652
-# 9  2023-12-14 1197213       4     1197213
-# 10 2023-12-15      NA       5     1163143
+# Date  Values weekday weekday_label Values_fill
+# 1  2023-12-06 1138652       3         mi\\.     1138652
+# 2  2023-12-07 1150728       4         ju\\.     1150728
+# 3  2023-12-08 1163143       5         vi\\.     1163143
+# 4  2023-12-09 1111295       6         sá\\.     1111295
+# 5  2023-12-10 1159204       7         do\\.     1159204
+# 6  2023-12-11 1133881       1         lu\\.     1133881
+# 7  2023-12-12 1053707       2         ma\\.     1053707
+# 8  2023-12-13      NA       3         mi\\.     1138652
+# 9  2023-12-14 1197213       4         ju\\.     1197213
+# 10 2023-12-15      NA       5         vi\\.     1163143
