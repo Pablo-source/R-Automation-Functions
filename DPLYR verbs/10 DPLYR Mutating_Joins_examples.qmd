@@ -1,0 +1,224 @@
+---
+title: "Mutating Joins to combine data"
+author: "Pablo Leon-Rodenas |pablo.leonrodenas@nhs.net"
+date: "`r Sys.Date()`"
+format: 
+  html:
+    toc: true
+    html-math-method: katex
+    code-fold: false
+    editor: source
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+editor: visual
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      dpi = 180, fig.width = 8, fig.height = 5)
+library(tidyverse)
+```
+
+## Joins to data
+
+In relational databases Joins, also called merge operations, are used to combine different variables across several data sets.
+
+## Mutating joins
+
+Mutating **joins** in R using DPLYR refer to joins that **add new variables** to the base data set. Like the mutate() verb will do in DPLYR. We usually start with a data set including one row per observation.
+
+There are **four** types of mutating joins:
+
+-   **left join**: All variables from the **base data set (x)** are **retained**, and *new variables* from **data set (y)** that match the observations (rows) in data set x on the key (unique id) variable **are added**.
+
+-   **right join**: All variables from **new data set (y)** are **retained**, and **new variables** from the **base data set (x)** that **match** the observations (rows) in data set y on the key (unique id) variable **are added**.
+
+-   **inner join**: Includes all rows in **both** **base data set (x)** and **new data set(y)**, requiring matching on key **unique id** variable. This join only returns common rows in both x and y data sets.
+
+-   **full join**: Includes all rows in **either** **data set (x)** or **data set (y)**, matching on key (unique id) variable when matches are present, **filling in NAs in missing columns** if no match is present.
+
+### data sets used in the left join
+
+In this example below, base data set has one row "D" that is not present in the new data set. As this is a **left** join, this observation from the base data set is retained in the join.
+
+```{r Base data set}
+# Left join with non matching values 
+Brand <-c("A","B","D")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+```{r new data set}
+Name <-c("A","B","C")
+Desc<-c("30%","50%","30%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+### Left join
+
+Now we perform a LEFT join on the above two data sets. We declare both base and new data set **inside** the `left_join()` function adding also `by = join_by(NHSCode == Org_Code_For_Join)` to specify join is based on different set of variables. As C variable is only present in the New data set, the left join returns a NA value for Desc variable value.
+
+```{r left join different variable}
+
+Ljoin <-left_join(Base,New,
+                   by = join_by(Brand == Name))
+Ljoin
+```
+
+### Right join
+
+This second example is a right join with non matching values. All variables from new data set are retained, and variables from the base data set that match the observations are added.
+
+### data sets used in the right join
+
+In this example base data set has one row "D" that is not present in the new data set. This is a **right** join, meaning we obtain row "C" only present in the new data set, and with it comes variable "Desc" that belongs to the new data set included by the right join.
+
+```{r Base data set right join}
+Brand <-c("A","B","D")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+```{r new data set right join}
+Name <-c("A","B","C")
+Desc<-c("30%","50%","30%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+Performing a right join
+
+```{r right join by different variable}
+Rjoin <-right_join(Base,New,by = join_by(Brand == Name))
+Rjoin
+```
+
+As Brand D is present in the *base* data set but **Not** present in the *new* data set, as we do a **right** join adding records from *new* data set, we see this **Brand D** **NOT** appearing in the merged data set, because we have performed a **right** join.
+
+Performing a **left** join produces NULL values on **Desc** variable that was coming from the *new* data set. Performing a **right** join produces NULL vallues on **Price** variable that was coming from the *base* data set.
+
+Performing a left join
+
+```{r left join by different variable}
+Ljoin <-left_join(Base,New,by = join_by(Brand == Name))
+Ljoin
+```
+
+### Inner join
+
+The third example is an **inner join** with non matching values. This merge only return **COMMON** rows in **BOTH** base and new data sets.
+
+```{r Base data set inner join}
+Brand <-c("A","B","C")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+And this is the new data set
+
+```{r New data set inner join}
+Name <-c("A","B","D")
+Desc<-c("30%","50%","10%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+We perform an inner join based on two unique id variables, as these unique id variables have different names in both Base and New datases.
+
+```{r Inner join, echo = TRUE}
+Inner_join <-inner_join(Base,New,by = join_by(Brand == Name))
+Inner_join
+```
+
+### Full join
+
+In a Full Join, we include rows in *either* base *or* new data sets, matching on key (unique ID) variables. As before this unique ID variable has different names on each data sets.
+
+The Full join creates NAs in missing columns if no match is present.
+
+```{r Base data set Full join, echo=TRUE}
+Brand <-c("A","B","C")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+```{r New data set Full join, echo=TRUE}
+Name <-c("A","B","D")
+Desc<-c("30%","50%","10%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+Performing a **full** join produces NULL values on variables coming from **either** the **Base** data set or the **New** data set. A full join will create **NA** in **BOTH** Base and New data sets for non-matching records.
+
+```{r Full join script,echo=TRUE}
+Full_join <-full_join(Base,New,by = join_by(Brand == Name))
+Full_join
+```
+
+## Semi Join and Anti Join
+
+### Semi join
+
+Semi joins are the opposite of anti joins.A semi join returns the rows of the first table where it can find a match in the second table.
+
+```{r Base data set semi join, echo=TRUE}
+Brand <-c("A","B","C")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+```{r New data set semi join, echo=TRUE}
+Name <-c("A","B","D")
+Desc<-c("30%","50%","10%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+Performing a semi join returns only the rows with **matching records** in **both** Base and New data sets.
+
+```{r Semi join, echo=TRUE}
+Semi_join <-semi_join(Base,New,by = join_by(Brand == Name))
+Semi_join
+```
+
+### Anti join
+
+An anti join returns the rows of the first table where it cannot find a match in the second table.
+
+```{r Base data set anti join, echo=TRUE}
+Brand <-c("A","B","C")
+Price<-c(10,41,65)
+Base <-cbind.data.frame(Brand,Price)
+Base
+```
+
+```{r New data set anti join, echo=TRUE}
+Name <-c("A","B","D")
+Desc<-c("30%","50%","10%")
+New <-cbind.data.frame(Name,Desc)
+New
+```
+
+Performing an anti join returns the rows of the first table where it cannot find a match in the second table.
+
+```{r Anti join, echo=TRUE}
+Anti_join <-anti_join(Base,New,by = join_by(Brand == Name))
+Anti_join
+```
+
+## Online resources
+
+-   DPLYR. Mutating Joins. See URL below for full list of arguments for each join: <https://dplyr.tidyverse.org/reference/mutate-joins.html>
+-   Anti joins <https://campus.datacamp.com/courses/introduction-to-spark-with-sparklyr-in-r/tools-of-the-trade-advanced-dplyr-usage?ex=12>
+-   Semi joins <https://campus.datacamp.com/courses/introduction-to-spark-with-sparklyr-in-r/tools-of-the-trade-advanced-dplyr-usage?ex=13>
+-   R for Data Science (chapter 19 Joins) <https://r4ds.hadley.nz/joins.html>
+-   Reproducible Medical Research with R <https://bookdown.org/pdr_higgins/rmrwr/>
+-   Chapter 9: Mutating Joins to Combine Data Sources <https://bookdown.org/pdr_higgins/rmrwr/mutating-joins-to-combine-data-sources.html>
+-   Tidyr package <https://github.com/tidyverse/tidyr>
