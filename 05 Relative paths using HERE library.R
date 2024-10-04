@@ -1,7 +1,27 @@
 # HOW TO USE HERE LIBRARY
 # Topics: coding best practices, using relative paths
-# Updated 20/06/2022 
+# Date: 20/06/2022 
+# Last update 03/10/2024
 
+
+# 1. At the start of your script, use here() function from {here} package to build relative paths on your project directory:
+
+# This is template on how to use "where_am_i" object with here() function
+where_am_i <- here::here()
+
+excel_file <- list.files(paste0(where_am_i,"/ggplot2-visualizations/data"),pattern = "xlsx$")
+excel_file
+
+excel_tabs <- excel_sheets(paste0(where_am_i,"/ggplot2-visualizations/data/RTT_TS_data.xlsx"))
+excel_tabs
+
+# 2. Two examples on how to read in .csv file with read.table() and write out .csv files using write.csv() function 
+# read_in_test  <-read.table(here("data", "data.csv"),
+#                          header =TRUE, sep ='\t',stringsAsFactors =TRUE)
+
+# write.csv(aq,here("data","sample","write_out_test.csv"), row.names = TRUE)
+
+# See code snippets at the end of this script
 library(datasets)
 library(here)
 
